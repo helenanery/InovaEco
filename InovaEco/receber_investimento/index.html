@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Painel de Controle de Projetos</title>
+    <link rel="stylesheet" href="painel.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Link da biblioteca Chart.js -->
+</head>
+<body>
+    <header>
+        <h2>Dashboard de Investimentos</h2>
+        <p>Acompanhe os investimentos em seus projetos de forma visual e intuitiva.</p>
+    </header>
+
+    <!-- Seção de Visão Geral -->
+      <!-- Abacaxi -->
+    <section class="overview-cards">
+        <div class="overview-card">
+            <h3>Total de Investimentos</h3>
+            <p id="total-investments">R$ 1.250.000</p>
+        </div>
+        <div class="overview-card">
+            <h3>Projetos em Andamento</h3>
+            <p>4 Projetos</p>
+        </div>
+        <div class="overview-card">
+            <h3>Média de Progresso</h3>
+            <p>65%</p>
+        </div>
+    </section>
+
+    <!-- Seção de Gráficos -->
+    <section class="charts">
+        <div class="chart-container">
+            <h3>Progresso dos Projetos</h3>
+            <canvas id="progressChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Distribuição dos Investimentos</h3>
+            <canvas id="investmentChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Lista de Projetos -->
+    <section class="project-table">
+        <h3>Detalhes dos Projetos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Projeto</th>
+                    <th>Investimento Recebido</th>
+                    <th>Meta</th>
+                    <th>Progresso (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <!-- Abacaxi -->
+                <tr>
+                    <td>Energia Solar Comunitária</td>
+                    <td>R$ 750.000</td>
+                    <td>R$ 1.000.000</td>
+                    <td>75%</td>
+                </tr>
+                <tr>
+                    <td>Reciclagem Urbana Sustentável</td>
+                    <td>R$ 500.000</td>
+                    <td>R$ 800.000</td>
+                    <td>62.5%</td>
+                </tr>
+                <!-- Outras linhas de projetos -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Scripts para os Gráficos -->
+    <script src="painel.js"></script>
+</body>
+</html>
