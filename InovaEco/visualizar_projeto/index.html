@@ -1,0 +1,43 @@
+<!--CONECTAR NA PÁGINA 'buscar_projetos' onde aparece visualizar projeto-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Projeto</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
+</head>
+<body>
+    <!-- Título separado do Card -->
+    <h2 class="project-title">Detalhes do Projeto</h2>
+
+    <!-- Seção principal do projeto -->
+    <section class="project-detail">
+        <!-- Card de Detalhes -->
+        <div class="project-detail-card">
+            <!-- Imagem do projeto -->
+            <img src="img/solar.png" alt="Energia Solar Comunitária" class="card-image">
+
+            <!-- Nome do projeto -->
+            <h3 class="project-name">Energia Solar Comunitária</h3>
+
+            <!-- Descrição do projeto -->
+            <p class="project-description">Soluções de energia solar para comunidades de baixa renda, promovendo sustentabilidade e redução de custos.</p>
+
+            <!-- Barra de progresso de investimento -->
+            <div class="investment-progress">
+                <div class="progress-container">
+                    <p class="progress-title">Investimento Concluído:</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                    <p class="investment-info">65% do objetivo alcançado. Faltam R$ 50.000 para concluir o financiamento.</p>
+                </div>
+            </div>
+
+            <!-- Botão de Investimento -->
+            <button class="btn-invest" onclick="investirAgora()">Investir Agora</button>
+        </div>
+    </section>
+</body>
+</html>

@@ -5,92 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InovaEco - Plataforma de Investimentos Sustentáveis</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">InovaEco</div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#benefits">Benefícios</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-        <a href="#signup" class="btn-signup">Comece Agora</a>
-    </header>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="header-container">
+        <!-- Ícone do menu hambúrguer e logo ao lado -->
+        <div class="menu-logo">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <div class="logo">InovaEco</div>
+        </div>
+        <!-- Botão "Abra sua conta" à direita -->
+        <a href="#signup" class="btn-create-account">Abra sua conta</a>
+    </div>
+</header>
 
-    <!-- Seção Hero -->
-    <section class="hero" id="hero">
-        <h1>Invista no Futuro Sustentável com a InovaEco</h1>
-        <p>Conectando empreendedores, investidores e empresas parceiras em um ecossistema de apoio mútuo.</p>
-        <button class="btn" onclick="comecarAgora()">Comece Agora</button>
-    </section>
+<!-- Menu lateral (inicialmente oculto) -->
+<div class="side-menu" id="sideMenu">
+    <button class="close-btn" onclick="toggleMenu()">X</button>
+    <nav>
+        <ul>
+            <li><a href="#hero" onclick="toggleMenu()">Início</a></li>
+            <li><a href="#about" onclick="toggleMenu()">Sobre</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projetos</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contato</a></li>
+            <li><a href="#account" onclick="toggleMenu()">Acesse sua Conta</a></li>
+        </ul>
+    </nav>
+</div>
+
+  <!-- Seção Hero -->
+<section class="hero" id="hero">
+    <h1>Invista no Futuro Sustentável com a InovaEco</h1>
+    <p>Conectando empreendedores, investidores e empresas parceiras em um ecossistema de apoio mútuo.</p>
+    <button class="btn" onclick="comecarAgora()">Comece Agora</button>
+</section>
 
     <!-- Seção Sobre a InovaEco -->
     <section class="section about" id="about">
-        <h2>O que é a InovaEco?</h2>
-        <p>A InovaEco é uma plataforma digital desenvolvida para conectar empreendedores sustentáveis, investidores e empresas parceiras em um ecossistema de apoio mútuo. Fomentamos o financiamento de projetos sustentáveis, oferecendo vantagens para quem apoia causas de impacto socioambiental. Com uma interface intuitiva, permitimos que projetos sustentáveis sejam criados e promovidos, facilitando a captação de recursos e incentivando o engajamento em práticas sustentáveis.</p>
-    </section>
-
-    <!-- Seção para Tipos de Usuários -->
-    <section class="section" id="services">
-        <h2>Tipos de Usuários</h2>
-        <div class="user-types">
-            <div class="user-card">
-                <h3>Empreendedores Sustentáveis</h3>
-                <p>Promova seus projetos e busque financiamento para iniciativas de impacto socioambiental.</p>
-            </div>
-            <div class="user-card">
-                <h3>Investidores</h3>
-                <p>Invista em projetos que fazem a diferença e receba benefícios proporcionais ao seu investimento.</p>
-            </div>
-            <div class="user-card">
-                <h3>Empresas Parceiras</h3>
-                <p>Ofereça vantagens exclusivas aos nossos investidores e apoie o desenvolvimento sustentável.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Benefícios -->
-    <section class="section benefits" id="benefits">
-        <h2>Benefícios para Todos</h2>
-        <p>Com a InovaEco, todos saem ganhando. Apoie a sustentabilidade e obtenha retornos tangíveis.</p>
-        <div class="benefits-list">
-            <div class="benefit-card">
-                <h3>Impacto Positivo</h3>
-                <p>Contribua diretamente para projetos que fazem a diferença no meio ambiente.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Retorno Financeiro</h3>
-                <p>Investimentos que geram retorno financeiro e ainda ajudam o planeta.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Vantagens Corporativas</h3>
-                <p>Descontos e benefícios em serviços de saúde e bem-estar.</p>
-            </div>
-        </div>
-    </section>
-<!-- Seção de Projetos -->
-<section class="section discover-projects">
-    <h2>Descubra Projetos Socioambientais</h2>
-    <p>Explore projetos de impacto e encontre oportunidades para investir em um futuro mais sustentável.</p>
-    <a href="discover.html" class="btn btn-discover">Descobrir projetos</a>
+    <h2>O que é a InovaEco?</h2>
+    <p>A InovaEco é uma plataforma digital que conecta empreendedores sustentáveis, investidores conscientes e empresas parceiras em um ecossistema colaborativo voltado para financiamento de projetos com impacto socioambiental.</p>
+    <p>Nosso objetivo é promover iniciativas de energia renovável, agricultura sustentável, educação ambiental e outras soluções inovadoras. Com uma interface simples e intuitiva, a InovaEco facilita a captação de recursos e incentiva o engajamento com práticas sustentáveis, oferecendo incentivos exclusivos para quem investe e apoia essas causas.</p>
+    <p>Seja você um empreendedor, um investidor ou uma empresa parceira, a InovaEco é o lugar para fomentar um futuro mais sustentável. Junte-se a nós!</p>
 </section>
-
-    <!-- Rodapé -->
-    <footer id="contact">
-        <div class="footer-content">
-            <p>&copy; 2024 InovaEco. Todos os direitos reservados.</p>
-            <div class="footer-links">
-                <a href="#hero">Início</a>
+ <section class="section" id="services">
+        <h2>Tipos de Usuário</h2>
+        <div class="user-benefits-container">
+            <!-- Card de Empreendedor -->
+            <div class="user-benefit-card">
+                <div class="card-inner">
+                    <!-- Frente do card: Tipo de Usuário -->
+                    <div class="card-front">
+                        <h3>Empreendedor Sustentável</h3>
+                        <p>Promova seus projetos e busque financiamento.</p>
+                    </div>
+                    <!-- Parte de trás do card: Benefício -->
+                    <div class="card-back">
+                        <h4>Benefício:</h4>
+                        <p>Acesso a investidores e apoio para iniciativas de impacto.</p>
+                    </div>
+                </div>
             </div>
-            <p>Contato: <a href="mailto:contato@inovaeco.com">contato@inovaeco.com</a></p>
+    
+            <!-- Card de Investidor -->
+            <div class="user-benefit-card">
+                <div class="card-inner">
+                    <!-- Frente do card: Tipo de Usuário -->
+                    <div class="card-front">
+                        <h3>Investidor</h3>
+                        <p>Invista em projetos de impacto.</p>
+                    </div>
+                    <!-- Parte de trás do card: Benefício -->
+                    <div class="card-back">
+                        <h4>Benefício:</h4>
+                        <p>Retorno financeiro e benefícios exclusivos.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card de Empresa Parceira -->
+            <div class="user-benefit-card">
+                <div class="card-inner">
+                    <!-- Frente do card: Tipo de Usuário -->
+                    <div class="card-front">
+                        <h3>Empresa Parceira</h3>
+                        <p>Ofereça vantagens aos nossos investidores.</p>
+                    </div>
+                    <!-- Parte de trás do card: Benefício -->
+                    <div class="card-back">
+                        <h4>Benefício:</h4>
+                        <p>Descontos e parcerias com impacto positivo.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+    
+    <section class="section discover-projects">
+        <h2>Descubra Projetos Socioambientais</h2>
+        <p>Explore projetos de impacto e encontre oportunidades para investir em um futuro mais sustentável.</p>
+    
+        <!-- Container dos Cards -->
+        <div class="project-cards">
+            <!-- Card 1: Energia Solar Comunitária -->
+            <div class="project-card">
+                <img src="img/solar.png" alt="Energia Solar Comunitária" class="card-image">
+                <h3>Energia Solar Comunitária</h3>
+                <p class="setor">Setor: Energia</p>
+                <p class="localizacao">Localização: São Paulo - SP</p>
+                <p>Soluções de energia solar para comunidades de baixa renda.</p>
+            </div>
+    
+            <!-- Card 2: Reciclagem Urbana -->
+            <div class="project-card">
+                <img src="img/reciclagem.png" alt="Reciclagem Urbana" class="card-image">
+                <h3>Reciclagem Urbana</h3>
+                <p class="setor">Setor: Reciclagem</p>
+                <p class="localizacao">Localização: Belém - PA</p>
+                <p>Inclusão social e sustentabilidade com foco em reciclagem.</p>
+            </div>
+    
+            <!-- Card 3: Agricultura Regenerativa -->
+            <div class="project-card">
+                <img src="img/regenerativa.png" alt="Agricultura Regenerativa" class="card-image">
+                <h3>Agricultura Regenerativa</h3>
+                <p class="setor">Setor: Agricultura</p>
+                <p class="localizacao">Localização: Campo Grande - MS</p>
+                <p>Práticas agrícolas que revitalizam o solo e aumentam a produtividade.</p>
+            </div>
+    
+            <!-- Card 4: Educação Ambiental -->
+            <div class="project-card">
+                <img src="img/educacao.png" alt="Educação Ambiental" class="card-image">
+                <h3>Educação Ambiental</h3>
+                <p class="setor">Setor: Educação</p>
+                <p class="localizacao">Localização: Recife - PE</p>
+                <p>Promovendo a consciência ambiental nas escolas.</p>
+            </div>
+        </div>
+        <!-- Botão Descubra Mais -->
+<button class="btn-descubra-mais" onclick="window.location.href='#projetos'">Descubra Mais</button>
+    </section>
+    
+    <!-- Rodapé -->
+<footer id="contact">
+    <div class="footer-content">
+        <p>&copy; 2024 InovaEco. Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:contato@inovaeco.com">contato@inovaeco.com</a></p>
+    </div>
+</footer>
+
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </body>
 </html>

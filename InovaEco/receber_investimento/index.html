@@ -1,20 +1,20 @@
+<!--Após a página de login do gestor de projetos-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Painel de Controle de Projetos</title>
-    <link rel="stylesheet" href="painel.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Link da biblioteca Chart.js -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Link para o Chart.js -->
 </head>
 <body>
     <header>
-        <h2>Dashboard de Investimentos</h2>
-        <p>Acompanhe os investimentos em seus projetos de forma visual e intuitiva.</p>
+        <h2>Painel de Investimentos</h2>
+        <p>Acompanhe os investimentos em seus projetos.</p>
     </header>
 
     <!-- Seção de Visão Geral -->
-      <!-- Abacaxi -->
     <section class="overview-cards">
         <div class="overview-card">
             <h3>Total de Investimentos</h3>
@@ -34,7 +34,7 @@
     <section class="charts">
         <div class="chart-container">
             <h3>Progresso dos Projetos</h3>
-            <canvas id="progressChart"></canvas>
+            <canvas id="progressChart" height="300"></canvas> <!-- Aumentei a altura do gráfico -->
         </div>
         <div class="chart-container">
             <h3>Distribuição dos Investimentos</h3>
@@ -42,38 +42,48 @@
         </div>
     </section>
 
-    <!-- Lista de Projetos -->
-    <section class="project-table">
-        <h3>Detalhes dos Projetos</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome do Projeto</th>
-                    <th>Investimento Recebido</th>
-                    <th>Meta</th>
-                    <th>Progresso (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                    <!-- Abacaxi -->
-                <tr>
-                    <td>Energia Solar Comunitária</td>
-                    <td>R$ 750.000</td>
-                    <td>R$ 1.000.000</td>
-                    <td>75%</td>
-                </tr>
-                <tr>
-                    <td>Reciclagem Urbana Sustentável</td>
-                    <td>R$ 500.000</td>
-                    <td>R$ 800.000</td>
-                    <td>62.5%</td>
-                </tr>
-                <!-- Outras linhas de projetos -->
-            </tbody>
-        </table>
+    <!-- Seção de Resumo do Investimento -->
+    <section class="investment-summary">
+        <h3>Investimentos Recebidos</h3>
+        <div class="summary-cards">
+            <div class="summary-card">
+                <h4>Total Recebido</h4>
+                <p id="total-investment">R$ 750.000</p>
+            </div>
+            <div class="summary-card">
+                <h4>Meta de Financiamento</h4>
+                <p>R$ 1.000.000</p>
+            </div>
+            <div class="summary-card">
+                <h4>Progresso</h4>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+                <p>75% atingido</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Scripts para os Gráficos -->
-    <script src="painel.js"></script>
+    <!-- Seção de Investidores -->
+    <section class="investor-list">
+        <h3>Investidores Interessados</h3>
+        <div class="investor-card">
+            <h4>Empresa SolarInvest</h4>
+            <p>Investimento: R$ 300.000</p>
+            <p>Data: 10/10/2023</p>
+        </div>
+        <div class="investor-card">
+            <h4>GreenPower Ltda</h4>
+            <p>Investimento: R$ 200.000</p>
+            <p>Data: 15/10/2023</p>
+        </div>
+        <div class="investor-card">
+            <h4>EcoPartners</h4>
+            <p>Investimento: R$ 250.000</p>
+            <p>Data: 20/10/2023</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script> <!-- Link para o JS -->
 </body>
 </html>

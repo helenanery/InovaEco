@@ -1,0 +1,158 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0A0A0A;
+    color: #FFF;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h2 {
+    font-size: 36px;
+    color: #BAFD02;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #CCC;
+    margin-bottom: 40px;
+}
+
+/* Cartões de Visão Geral */
+.overview-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.overview-card {
+    background-color: #1A1A1A;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.overview-card h3 {
+    color: #BAFD02;
+    font-size: 18px;
+}
+
+.overview-card p {
+    font-size: 24px;
+}
+
+/* Seção de Gráficos */
+.charts {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.chart-container {
+    width: 45%; /* A largura foi mantida em 45% */
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chart-container h3 {
+    color: #BAFD02;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Resumo de Investimentos */
+.investment-summary {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.investment-summary h3 {
+    font-size: 28px;
+    color: #BAFD02;
+    margin-bottom: 20px;
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.summary-card {
+    background-color: #1A1A1A;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.summary-card h4 {
+    font-size: 18px;
+    color: #BAFD02;
+    margin-bottom: 10px;
+}
+
+.summary-card p {
+    font-size: 24px;
+    color: #FFF;
+}
+
+.progress-bar {
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 100%;
+    background-color: #BAFD02;
+}
+
+/* Lista de Investidores */
+.investor-list {
+    margin-top: 40px;
+}
+
+.investor-list h3 {
+    font-size: 28px;
+    color: #BAFD02;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.investor-card {
+    background-color: #1A1A1A;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+}
+
+.investor-card h4 {
+    font-size: 20px;
+    color: #BAFD02;
+}
+
+.investor-card p {
+    font-size: 16px;
+    color: #CCC;
+}

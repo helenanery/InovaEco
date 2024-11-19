@@ -1,191 +1,379 @@
-/* Reset */
+/* Variáveis de Cores */
+:root {
+    --primary-color: #BAFD02;
+    --secondary-color: #98c800;
+    --background-dark: #111;
+    --background-light: #222;
+    --text-light: #ddd;
+    --text-dark: #111;
+    --text-muted: #777;
+}
+
+/* Reset global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Corpo e fundo */
+/* Corpo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-dark);
     color: #fff;
-    line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background-color: #222;
+    background-color: var(--background-light);
+    padding: 15px 10%;
     position: fixed;
     width: 100%;
     z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contêiner do cabeçalho */
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Agrupamento do ícone do menu e logo */
+.menu-logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .logo {
+    font-family: 'Open Sans', sans-serif;
     font-size: 24px;
     font-weight: bold;
-    color: #BAFD02;
+    color: var(--primary-color);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: #BAFD02;
-    text-decoration: none;
+/* Botão "Abra sua Conta" */
+.btn-create-account {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 5px;
     font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-nav a:hover {
+.btn-create-account:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Menu lateral */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background-dark);
+    overflow-x: hidden;
+    transition: width 0.5s;
+    z-index: 200;
+    padding-top: 60px;
+}
+
+.side-menu nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu nav a {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.side-menu nav a:hover {
     color: #fff;
 }
 
-.btn-signup {
-    background-color: #BAFD02;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: #111;
-    font-weight: bold;
-    text-decoration: none;
+/* Botão de fechar menu */
+.close-btn {
+    font-size: 30px;
+    color: var(--primary-color);
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* Seção Hero */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 150px 10%;
-    text-align: center;
+    position: relative;
+    background-size: cover; /* A imagem de fundo cobre toda a área */
+    background-position: center center; /* Centraliza a imagem */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 120px 20px; /* Aumenta o padding superior para dar mais espaçamento */
+    min-height: 500px; /* Aumenta a altura mínima */
+    display: flex;
+    justify-content: center; /* Alinha o conteúdo centralmente */
+    align-items: center; /* Alinha o conteúdo centralmente */
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4); /* Sobrepor uma camada semitransparente para melhorar o contraste do texto */
+    border-bottom: 5px solid #BAFD02; /* Linha de destaque embaixo da seção */
 }
 
+/* Título da Seção Hero */
 .hero h1 {
-    font-size: 48px;
-    color: #BAFD02;
-    margin-bottom: 10px;
+    font-size: 3.5rem; /* Tamanho maior para o título */
+    font-weight: bold; /* Deixa o título mais forte */
+    color: #BAFD02; /* Cor do título */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra suave para destacar o título */
 }
 
+/* Descrição da Seção Hero */
 .hero p {
-    font-size: 20px;
-    color: #ddd;
-    margin-bottom: 20px;
+    font-size: 1.2rem; /* Tamanho confortável para o texto */
+    color: #fff;
+    max-width: 800px; /* Limita a largura do texto */
+    margin-bottom: 30px; /* Espaçamento abaixo da descrição */
+    line-height: 1.5; /* Aumenta o espaçamento entre as linhas para legibilidade */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* Sombra suave para o texto */
 }
 
-.hero .btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    color: #111;
-    background-color: #BAFD02;
+/* Estilo do botão "Comece Agora" */
+.hero button.btn {
+    background-color: #BAFD02; /* Cor de fundo do botão */
+    color: black; /* Cor do texto */
+    font-size: 1.2rem; /* Tamanho do texto do botão */
+    padding: 15px 35px; /* Tamanho do botão */
     border: none;
-    border-radius: 5px;
+    border-radius: 10px; /* Bordas arredondadas */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease; /* Efeito suave para transições */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra suave para dar profundidade */
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaçamento entre as letras */
 }
 
-.hero .btn:hover {
-    background-color: #A4D502;
+.hero button.btn:hover {
+    background-color: #9bd200; /* Cor mais escura no hover */
+    transform: translateY(-3px); /* Efeito de elevação */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); /* Aumenta a sombra no hover */
+}
+
+.hero button.btn:focus {
+    outline: none; /* Remove o contorno padrão do foco */
+    box-shadow: 0 0 5px 2px rgba(186, 253, 2, 0.7); /* Adiciona um contorno verde no foco */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Reduz o tamanho do título para telas menores */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduz o tamanho da descrição */
+    }
+
+    .hero button.btn {
+        font-size: 1rem; /* Ajusta o tamanho do texto do botão */
+        padding: 12px 30px; /* Ajusta o tamanho do botão */
+    }
 }
 
 /* Seções informativas */
 .section {
-    padding: 60px 10%;
+    padding: 40px 10%; /* Ajustar o padding das seções */
     text-align: center;
 }
 
 .section h2 {
+    font-family: 'Open Sans', sans-serif;
     font-size: 36px;
-    color: #BAFD02;
-    margin-bottom: 20px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .section p {
-    color: #ddd;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-light);
     margin-bottom: 40px;
-}
-
-.user-types, .benefits-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.user-card, .benefit-card {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    text-align: left;
-}
-
-.user-card h3, .benefit-card h3 {
-    color: #BAFD02;
-    margin-bottom: 10px;
-}
-
-.user-card p, .benefit-card p {
-    color: #ddd;
-    font-size: 14px;
-}
-
-/* Seção Sobre a InovaEco */
-.about {
-    background-color: #222;
-    color: #ddd;
-    padding: 40px 10%;
-    text-align: center;
-}
-
-/* Rodapé */
-footer {
-    background-color: #222;
-    padding: 20px;
-    text-align: center;
-    color: #777;
-    font-size: 14px;
-}
-
-.footer-links a {
-    color: #BAFD02;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    color: #fff;
-}
-/* Botão de avaliar projeto */
-.btn-evaluate {
-    display: inline-block;
-    padding: 10px 20px;
     font-size: 16px;
+}
+/* Estilo da Seção Sobre a InovaEco */
+.about {
+    position: relative; /* Necessário para sobrepor a camada com fundo */
+    background: url('img/ambient-sustainable.jpg') no-repeat center center; /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    color: #fff; /* Cor do texto */
+    padding: 60px 20px; /* Espaçamento confortável */
+    text-align: center; /* Centraliza o texto */
+    border-top: 5px solid var(--primary-color); /* Linha de destaque no topo */
+    border-bottom: 5px solid var(--primary-color); /* Linha de destaque no fundo */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Sombras internas para profundidade */
+}
+
+/* Camada de sobreposição semitransparente */
+.about::before {
+    content: ''; /* Cria a camada sem conteúdo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro semitransparente */
+    z-index: -1; /* Coloca abaixo do conteúdo */
+}
+
+/* Título da seção */
+.about h2 {
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #000;
-    background-color: #BAFD02;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    color: var(--primary-color); /* Cor destacada */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    text-transform: uppercase; /* Deixa o título mais impactante */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
 }
 
-.btn-evaluate:hover {
-    background-color: #9bd200;
+/* Parágrafo de descrição */
+.about p {
+    font-size: 1.125rem; /* Tamanho confortável para o texto */
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+    max-width: 800px; /* Limita a largura para melhorar a legibilidade */
+    margin: 0 auto 30px auto; /* Centraliza o texto e coloca espaço em baixo */
+    color: #ddd; /* Cor mais suave para o texto */
 }
 
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2rem; /* Reduz o tamanho do título em telas menores */
+    }
+
+    .about p {
+        font-size: 1rem; /* Reduz o tamanho da fonte do texto */
+        max-width: 90%; /* Aumenta a largura do texto para telas pequenas */
+    }
+}
+
+
+/* Contêiner para os cards de usuários e benefícios */
+.user-benefits-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.user-benefit-card {
+    width: 280px;
+    height: 350px;
+    perspective: 1000px;
+}
+
+/* Estilo do card (flip 3D) */
+.user-benefit-card .card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.user-benefit-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-back {
+    background-color: #444;
+    transform: rotateY(180deg);
+}
+
+/* Títulos e descrições */
+.card-front h3, .card-back h4 {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--primary-color);
+}
+
+.card-front p, .card-back p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-light);
+}
+
+.card-front h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.card-back h4 {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .user-benefits-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-benefit-card {
+        width: 90%;
+    }
+
+    .btn-descubra-mais {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px;
+    }
+}
+
+/* Botão Geral */
 .btn {
     display: inline-block;
     padding: 12px 24px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    color: #000; /* Cor do texto */
-    background-color: #BAFD02; /* Cor de fundo verde */
+    color: #000;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 6px;
     text-decoration: none;
@@ -194,23 +382,198 @@ footer {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos específicos para o botão "Descobrir projetos" */
-.btn-discover {
-    margin-top: 20px;
-    font-size: 18px;
-    padding: 14px 28px;
-}
-
-/* Efeito de hover */
 .btn:hover {
-    background-color: #9bd200; /* Um verde mais escuro para o efeito hover */
+    background-color: #9bd200;
     transform: translateY(-3px);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeito de foco */
 .btn:focus {
     outline: 2px solid #9bd200;
     outline-offset: 4px;
 }
 
+/* Seção de cards */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0 15px;
+}
+
+.project-card {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem do card */
+.project-card img.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: black;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Título do card */
+.project-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #BAFD02;
+    margin: 15px 0 10px;
+}
+
+/* Texto de descrição do card */
+.project-card p {
+    font-size: 16px;
+    color: white;
+    margin: 0 15px 15px 15px;
+    line-height: 1.4;
+}
+
+/* Botões refinados */
+.project-card .btn-evaluate,
+.project-card .btn-invest {
+    padding: 12px;
+    font-size: 16px;
+    color: black;
+    background-color: #BAFD02;
+    border: none;
+    border-radius: 25px;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.project-card .btn-evaluate:hover,
+.project-card .btn-invest:hover {
+    background-color: #9bd200;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+    .project-cards {
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 240px;
+    }
+
+    .project-card img.card-image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-cards {
+        gap: 15px;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .project-card img.card-image {
+        height: 140px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+    }
+
+    .project-card p {
+        font-size: 14px;
+    }
+
+    .project-card .btn-evaluate,
+    .project-card .btn-invest {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* Botão "Descubra mais" */
+.btn-descubra-mais {
+    background-color: var(--primary-color);
+    color: #111;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.btn-descubra-mais:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-descubra-mais:focus {
+    outline: 2px solid #9bd200;
+    outline-offset: 4px;
+}
+
+
+/* Rodapé */
+footer {
+    background-color: #2d2d2d;
+    padding: 40px 20px;
+    text-align: center;
+    color: #ddd;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+footer p a {
+    color: #BAFD02;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 10px;
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
